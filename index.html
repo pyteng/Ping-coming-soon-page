@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Libre+Franklin:300,600,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Ping coming soon page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <div class="header__logo">
+          <img src="images/logo.svg" alt="logo" class="header__logo-img" />
+        </div>
+        <div class="header__subscription">
+          <h1>We are launching <span class="bold">soon!</span></h1>
+          <p>Subscribe and get notified</p>
+          <form class="form" action="/" method="GET" novalidate>
+            <div class="form-group">
+              <input
+                class="form-control"
+                id="email"
+                type="email"
+                placeholder="Your email address..."
+                required
+              />
+              <div class="error">
+                <em>Please provide a valid email address</em>
+              </div>
+            </div>
+            <button class="btn" type="submit">Notify Me</button>
+          </form>
+        </div>
+        <div class="header__image">
+          <img
+            class="header__image-img"
+            src="images/illustration-dashboard.png"
+            alt="graph illustration"
+          />
+        </div>
+      </header>
+      <!-- end of header -->
+      <!-- Footer  -->
+      <div class="footer">
+        <div class="footer__social">
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <p>&copy; Copyright Ping. All rights reserved.</p>
+      </div>
+      <footer>
+        <p class="attribution">
+          Challenge by
+          <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+            >Frontend Mentor</a
+          >. Coded by <a href="#">Teng</a>.
+        </p>
+      </footer>
+      <!-- end of footer  -->
+    </div>
+    <script>
+      (function() {
+        "use strict";
+        window.addEventListener(
+          "load",
+          function() {
+            var form = document.querySelector(".form");
+            var inputs = document.querySelector(".form-control");
+            form.addEventListener(
+              "submit",
+              function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add("was-validated");
+              },
+              false
+            );
+          },
+          false
+        );
+      })();
+    </script>
+  </body>
+</html>
